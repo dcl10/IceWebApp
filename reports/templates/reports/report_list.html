@@ -1,0 +1,7 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+    {% for report in object_list %}
+        <h5>{{ patient.forename }}<a href="/reports/{{ report.report_id }}">{{ report.report_id }}</a></h5>
+    {% endfor %}
+{% endblock %}

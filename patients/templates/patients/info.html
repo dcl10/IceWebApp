@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+{% block content %}
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th><h4>NHS Number</h4></th>
+                <th><h4>Sex</h4></th>
+                <th><h4>Surname</h4></th>
+                <th><h4>Forename</h4></th>
+                <th><h4>D.O.B.</h4></th>
+            </tr>
+            <tr>
+                <td>{{ patient.nhs_number }}</td>
+                <td>{{ patient.sex }}</td>
+                <td>{{ patient.surname }}</td>
+                <td>{{ patient.forename }}</td>
+                <td>{{ patient.DOB }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

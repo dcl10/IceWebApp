@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Ice 2.0</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		{% include "core/includes/loginstyle.css" %}
+	</style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="text-center">Welcome to Ice 2.0</h1>
+        <p style="color:red">{{ warning }}</p>
+        <form class="center-block" method="post" action="/login/">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" name="username" placeholder="Username">
+                <input type="password" class="form-control" name="password" placeholder="Password">
+                <div class="btn-group btn-group-justified">
+                   <div class="btn-group">
+                    <button type="submit" class="form-control btn btn-primary" id="login">Login</button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="form-control btn btn-primary">Register</button>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
