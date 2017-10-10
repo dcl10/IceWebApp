@@ -1,0 +1,10 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <p>{{patient}}.</p>
+    <a href="/patients/add/">Add another</a>&nbsp
+    <a href="/patients/{{patient}}">View just added</a>&nbsp
+    <a href="/patients/">Return to patient list</a>
+
+{% endblock %}

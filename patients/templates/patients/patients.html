@@ -2,6 +2,6 @@
 
 {% block content %}
     {% for patient in object_list %}
-        <h5>{{ patient.forename }}<a href="/patients/{{ patient.nhs_number }}">{{ patient.nhs_number }}</a></h5>
+        <h5>{{ patient.forename }}&nbsp<a href="/patients/{{ patient.nhs_number }}">{{ patient.nhs_number }}</a></h5>
     {% endfor %}
 {% endblock %}
