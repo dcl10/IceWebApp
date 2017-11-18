@@ -1,7 +1,23 @@
 {% extends "core/base.html" %}
 
 {% block content %}
-    {% for patient in object_list %}
-        <h5>{{ patient.forename }}&nbsp<a href="/patients/{{ patient.nhs_number }}">{{ patient.nhs_number }}</a></h5>
+    {% for patient in patients %}
+        <p>{{patient.surname}}, {{patient.forename}},
+            <a href="/patients/{{patient.nhs_number}}">{{patient.nhs_number}}</a></p>
     {% endfor %}
+    <div class="pagination">
+    <span class="step-links">
+        {% if patients.has_previous %}
+            <a href="?page={{ patients.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ patients.number }} of {{ patients.paginator.num_pages }}.
+        </span>
+
+        {% if patients.has_next %}
+            <a href="?page={{ patients.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+    </div>
 {% endblock %}
